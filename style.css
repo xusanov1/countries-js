@@ -239,20 +239,3 @@ select {
     transition: background-color 0.3s;
     background-color: red;
 }
-
-@media (max-width: 768px) {
-    .header-bottom {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    header input,
-    header select {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    .card {
-        width: 100%;
-    }
-}

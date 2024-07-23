@@ -63,11 +63,16 @@ function showCountryDetails(country) {
     `;
 }
 
+
+
 function goBack() {
     countryDetails.classList.add('hidden');
     countriesContainer.classList.remove('hidden');
     headerBottom.classList.remove('hidden'); 
 }
+
+
+
 
 searchInput.addEventListener('input', () => {
     const searchTerm = searchInput.value.toLowerCase();
@@ -77,6 +82,9 @@ searchInput.addEventListener('input', () => {
     renderCountryCards(filteredCountries);
 });
 
+
+
+
 regionFilter.addEventListener('change', () => {
     const region = regionFilter.value;
     const filteredCountries = region
@@ -85,16 +93,10 @@ regionFilter.addEventListener('change', () => {
     renderCountryCards(filteredCountries);
 });
 
+
+
+
 darkModeToggle.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
 });
 
-function fetchTranslations(languageCode) {
-    fetch(`https://restcountries.com/v3.1/lang/${languageCode}`)
-        .then(response => response.json())
-        .then(data => {
-            allCountries = data;
-            renderCountryCards(data);
-        })
-        .catch(error => console.error('Error fetching translations:', error));
-}
